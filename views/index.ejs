@@ -1,0 +1,39 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Star Wars Quote App</title>
+    </head>
+
+    <body>
+        <h1>CREATE: May Node and Express be with you.</h1>
+        
+        <!-- (1): CREATE Task -->         
+        <!-- --> 
+        <form action="/quotes" method="POST">   
+            <input type="text" placeholder="Product Name" name="pname" />     
+            <input type="text" placeholder="Price" name="pprice" />    
+            <input type="text" placeholder="Color" name="pcolor" />
+            <button type="submit">Submit</button>
+        </form>
+        <!-- -->                               
+
+        <!-- (2) READ Task -->                        
+        <h2> READ: All Quotes in Database </h2>
+        <ul class="product">
+            <!-- Loop through quotes -->
+            <% for(var i = 0; i < product.length; i++) {%>
+                <li class="quote">
+                    <!-- Output name from the iterated quote object -->
+                    <span><%= product[i].pname %></span>:
+                    <!-- Output quote from the iterated quote object -->
+                    <span><%= product[i].pprice %></span>
+                    <span><%= product[i].pcolor %></span>
+                </li>
+            <% } %>
+        </ul>    
+    
+    </body>
+
+</html>
